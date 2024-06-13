@@ -2,22 +2,28 @@
 
 require get_template_directory() . '/inc/customizer.php';
 
-function wpdevs_load_scripts(){
-    wp_enqueue_style( 'wpdevs-style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css' ), 'all' );
+function geeta_load_scripts(){
+    
+    wp_register_style('style',get_template_directory_uri() . '/dist/app.css',[],1,'all');
+    wp_enqueue_style('style');
+    wp_enqueue_script('jquery');
+    wp_register_script('app',get_template_directory_uri() . '/src/app.js',['jquery'],1,true);
+    wp_enqueue_script('app'); 
+     
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap', array(), null );
     wp_enqueue_script( 'dropdown', get_template_directory_uri() . '/js/dropdown.js', array(), '1.0', true );
 }
-add_action( 'wp_enqueue_scripts', 'wpdevs_load_scripts' );
+add_action( 'wp_enqueue_scripts', 'geeta_load_scripts' );
 
-function wpdevs_config(){
+function geeta_config(){
 
-    $textdomain = 'wp-devs';
+    $textdomain = 'geeta';
     load_theme_textdomain( $textdomain, get_template_directory() . '/languages/' );
 
     register_nav_menus(
         array(
-            'wp_devs_main_menu' => esc_html__( 'Main Menu', 'wp-devs' ),
-            'wp_devs_footer_menu' => esc_html__( 'Footer Menu', 'wp-devs' )
+            'geeta_main_menu' => esc_html__( 'Main Menu', 'geeta' ),
+            'geeta_footer_menu' => esc_html__( 'Footer Menu', 'geeta' )
         )
     );
 
@@ -42,15 +48,15 @@ function wpdevs_config(){
     add_theme_support( 'editor-styles' );
     add_editor_style( 'style-editor.css' );
 }
-add_action( 'after_setup_theme', 'wpdevs_config', 0 );
+add_action( 'after_setup_theme', 'geeta_config', 0 );
 
-add_action( 'widgets_init', 'wpdevs_sidebars' );
-function wpdevs_sidebars(){
+add_action( 'widgets_init', 'geeta_sidebars' );
+function geeta_sidebars(){
     register_sidebar(
         array(
-            'name'  => esc_html__( 'Blog Sidebar', 'wp-devs' ),
+            'name'  => esc_html__( 'Blog Sidebar', 'geeta' ),
             'id'    => 'sidebar-blog',
-            'description'   => esc_html__( 'This is the Blog Sidebar. You can add your widgets here.', 'wp-devs' ),
+            'description'   => esc_html__( 'This is the Blog Sidebar. You can add your widgets here.', 'geeta' ),
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget'  => '</div>',
             'before_title'  => '<h4 class="widget-title">',
@@ -59,9 +65,9 @@ function wpdevs_sidebars(){
     );
     register_sidebar(
         array(
-            'name'  => esc_html__( 'Service 1', 'wp-devs' ),
+            'name'  => esc_html__( 'Service 1', 'geeta' ),
             'id'    => 'services-1',
-            'description'   => esc_html__( 'First Service Area', 'wp-devs' ),
+            'description'   => esc_html__( 'First Service Area', 'geeta' ),
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget'  => '</div>',
             'before_title'  => '<h4 class="widget-title">',
@@ -70,9 +76,9 @@ function wpdevs_sidebars(){
     );
     register_sidebar(
         array(
-            'name'  => esc_html__( 'Service 2', 'wp-devs' ),
+            'name'  => esc_html__( 'Service 2', 'geeta' ),
             'id'    => 'services-2',
-            'description'   => esc_html__( 'Second Service Area', 'wp-devs' ),
+            'description'   => esc_html__( 'Second Service Area', 'geeta' ),
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget'  => '</div>',
             'before_title'  => '<h4 class="widget-title">',
@@ -81,9 +87,9 @@ function wpdevs_sidebars(){
     );
     register_sidebar(
         array(
-            'name'  => esc_html__( 'Service 3', 'wp-devs' ),
+            'name'  => esc_html__( 'Service 3', 'geeta' ),
             'id'    => 'services-3',
-            'description'   => esc_html__( 'Third Service Area', 'wp-devs' ),
+            'description'   => esc_html__( 'Third Service Area', 'geeta' ),
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget'  => '</div>',
             'before_title'  => '<h4 class="widget-title">',

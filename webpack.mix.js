@@ -1,8 +1,2 @@
 let mix = require('laravel-mix');
-
-mix.js('src/app.js', 'dist').setPublicPath('dist');
-mix.sass('src/app.scss', 'dist');
-
-mix.autoload({
-    jquery: ['$', 'window.jQuery']
-});
+mix.sass('src/css/app.scss', 'src/css/_helper.css'); 

@@ -1,0 +1,16 @@
+@import url('./_colors.css');
+@import url('./_helper.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+
+.app {
+    background: var(--gray);
+}
+
+.site-container{
+    width: 70%;
+    margin: auto;
+    background: var(--gray);
+}
