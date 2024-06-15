@@ -11,9 +11,8 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <header>
-        <div class="site-container">
-
-                    <div class="logo">
+        <div class="site-container flex  justify-between pt-6 pb-5 items-center"> 
+                    <div class="logo max-w-20">
                         <?php
                         if (has_custom_logo()) {
                             the_custom_logo();
@@ -25,20 +24,13 @@
                         ?>
                     </div>
 
-                    <nav class="main-menu">
-                        <button class="check-button">
-                            <div class="menu-icon">
-                                <div class="bar1"></div>
-                                <div class="bar2"></div>
-                                <div class="bar3"></div>
-                            </div>
-                        </button>
+                    <nav class="main-menu flex">
+                   
                         <?php wp_nav_menu(array('theme_location' => 'geeta_main_menu', 'depth' => 2)); ?>
                     </nav>
                     <div class="searchbox">
                         <?php get_search_form(); ?>
                     </div>
-                
                 <?php
                 /*  if (!is_page('landing-page')) : ?>
                     <section class="menu-area">
@@ -47,6 +39,6 @@
                         </div>
                     </section>
                 <?php endif; */ ?>
-            </header>
         </div>
+    </header>
          

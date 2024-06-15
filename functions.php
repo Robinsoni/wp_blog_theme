@@ -9,6 +9,7 @@ function geeta_load_scripts(){
     wp_enqueue_script('jquery');
     wp_register_script('app',get_template_directory_uri() . '/src/app.js',['jquery'],1,true);
     wp_enqueue_script('app'); 
+    wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4' );
      
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap', array(), null );
     wp_enqueue_script( 'dropdown', get_template_directory_uri() . '/js/dropdown.js', array(), '1.0', true );
