@@ -13,6 +13,11 @@ module.exports = {
       maxHeight: {
         'max-content': 'max-content',
       },
+      colors: {
+        'primary-color': 'var(--primary-color)',
+        'secondary-color': 'var(--secondary-color)',
+        'tertiary-color': 'var(--tertiary-color)',
+      }
     },
   },
   plugins: [],

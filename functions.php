@@ -6,13 +6,13 @@ function geeta_load_scripts(){
     
     wp_register_style('style',get_template_directory_uri() . '/dist/app.css',[],1,'all');
     wp_enqueue_style('style');
-    wp_enqueue_script('jquery');
     wp_register_script('app',get_template_directory_uri() . '/src/app.js',['jquery'],1,true);
     wp_enqueue_script('app'); 
     wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4' );
-     
+    
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap', array(), null );
     wp_enqueue_script( 'dropdown', get_template_directory_uri() . '/js/dropdown.js', array(), '1.0', true );
+    wp_enqueue_script('jquery');
 }
 add_action( 'wp_enqueue_scripts', 'geeta_load_scripts' );
 
@@ -26,8 +26,7 @@ function geeta_config(){
             'geeta_main_menu' => esc_html__( 'Main Menu', 'geeta' ),
             'geeta_footer_menu' => esc_html__( 'Footer Menu', 'geeta' )
         )
-    );
-
+    ); 
     $args = array(
         'height'    => 225,
         'width'     => 1920
@@ -49,9 +48,40 @@ function geeta_config(){
     add_theme_support( 'editor-styles' );
     add_editor_style( 'style-editor.css' );
 }
+
+
+/**  ---------------   Set templates for parent category and singl post ---------------------------- */
+function custom_template_hierarchy($template) {
+   
+    if (is_category()) {
+        $category = get_queried_object();
+        if ($category->parent == 0) {
+            // This is a top-level category (chapter)
+            $template = locate_template('category-chapter.php');
+        }
+    } elseif (is_single()) { 
+        $categories = get_the_category();
+        foreach ($categories as $category) {
+            if ($category->parent != 0) {
+                // This post belongs to a child category (lesson)
+                $template = locate_template('single-verse.php');
+                break;
+            }
+        }
+    }
+    return $template;
+}
+add_filter('category_template', 'custom_template_hierarchy');
+add_filter('single_template', 'custom_template_hierarchy');
+
+/** --------------------------- ------------------ ------------------------------------------------------- */
+
+
+
 add_action( 'after_setup_theme', 'geeta_config', 0 );
 
 add_action( 'widgets_init', 'geeta_sidebars' );
+
 function geeta_sidebars(){
     register_sidebar(
         array(

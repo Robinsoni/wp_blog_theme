@@ -1,29 +1,44 @@
- 
-@tailwind base;
-@tailwind components;
-@tailwind utilities; 
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
 
-:root{
-    --card-badge-color : #4B6BFB;
-}
+ :root {
+     --primary-color: #4B6BFB;
+     --secondary-color: #d69f02;
+     --tertiary-color: #340d00;
+ }
 
-.site-container{
-    width: 66.66%;
-    margin: auto;
-    max-width: 1216px;
-}
-nav.main-menu ul{
-    display: flex;
-    li:last-child{
-        margin-left: 2em;
-    }
-}
-.hero.bg-custom-image {
-    background-image: url('../assets/img/mahabharat.png');
-    background-size: cover;
-    background-position: center;
-}
-.card-badge {
-    color: var(--card-badge-color);
-    font-size: 14px;
-}
+ .site-container {
+     width: 66.66%;
+     margin: auto;
+     max-width: 1216px;
+ }
+
+ nav.main-menu ul {
+     display: flex;
+
+     li:last-child {
+         margin-left: 2em;
+     }
+ }
+
+ .hero.bg-custom-image {
+     background-image: url('../assets/img/mahabharat.png');
+     background-size: cover;
+     background-position: center;
+ }
+
+ .card-badge {
+     color: var(--card-badge-color);
+     font-size: 14px;
+ }
+
+ section .wp-post-image {
+     height: 300px !important;
+     border-radius: 5px;
+ }
+
+ .verse-img img {
+     height: 500px;
+     border-radius: 10px;
+ }
