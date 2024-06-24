@@ -1,12 +1,12 @@
 <?php get_header(); ?>
-
+<?php if(header_image()){?>
 <img src="<?php header_image(); ?>" height="<?php echo esc_attr(get_custom_header()->height); ?>" width="<?php echo esc_attr(get_custom_header()->width); ?>" alt="" />
-
+<?php }?>
 <div id="content" class="site-content">
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
-            <?php the_archive_title('<h1 class="archive-title">', '</h1>'); ?>
-            <?php the_archive_description('<div class="archive-description">', '</div>'); ?>
+           <!--  <?php the_archive_title('<h1 class="archive-title">', '</h1>'); ?>
+            <?php the_archive_description('<div class="archive-description">', '</div>'); ?> -->
 
             <section class="post-container site-container grid grid-cols-3 gap-3">
                 <?php
@@ -31,14 +31,14 @@
                         endwhile;
                         wp_reset_postdata();
                 ?>
-                        <div class="wpdevs-pagination">
+                       <!--  <div class="wpdevs-pagination">
                             <div class="pages new">
-                                <?php previous_posts_link(esc_html__("<< Newer posts", 'wp-devs')); ?>
+                                <?php /* previous_posts_link(esc_html__("<< Newer posts", 'wp-devs')); */ ?>
                             </div>
                             <div class="pages old">
-                                <?php next_posts_link(esc_html__("Older posts >>", 'wp-devs')); ?>
+                                <?php /* next_posts_link(esc_html__("Older posts >>", 'wp-devs')); */ ?>
                             </div>
-                        </div>
+                        </div> -->
                     <?php
                     else : ?>
                         <p><?php esc_html_e('Nothing yet to be displayed!', 'wp-devs') ?></p>
@@ -49,7 +49,7 @@
                 ?>
 
             </section>
-            <?php get_sidebar(); ?>
+             
 
         </main>
     </div>

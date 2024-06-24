@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderColor:{
+        'light-gray-border': 'var(--light-gray-border)'
+      },
       maxHeight: {
         'max-content': 'max-content',
       },

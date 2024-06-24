@@ -6,9 +6,7 @@
 <section class="ad-section h-[160px] w-full ">
 </section>
 <section class="post-container site-container grid grid-cols-3 gap-3">
-
-
-    
+  
 <?php
     // Get top-level categories
     $parent_categories = get_categories(array(

@@ -5,7 +5,7 @@
         <?php the_post_thumbnail('large'); ?>
         <div class="card-details mt-4  mb-4">
             <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">अध्याय-एक</span>
-            <div class="text-xl  font-semibold mt-2 mb-2 "><a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a> </div>
+            <div class="text-xl  font-semibold mt-2 mb-2 hover:underline "><a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a> </div>
 
             <!-- excerpt start -->
             <div class="excerpt-parent relative">
@@ -27,10 +27,10 @@
 
             <div class="author flex justify-between  items-center  text-gray-500 w-3/4  mt-4  ">
                 <div class="author-details flex items-center">
-                    <img class="mr-2 " src="<? echo get_template_directory_uri() . "/assets/img/author-image.png"; ?>" alt="">
-                    <span class="author-name">Tracey Wilson</span>
+                    <img class="mr-2 w-[40px] border  rounded-full   " src="<? echo get_template_directory_uri() . "/assets/img/author-image.png"; ?>" alt="">
+                    <span class="author-name"><?php  the_author();?></span>
                 </div>
-                <span class="posted-on">August 20,2022</span>
+                <span class="posted-on"> <?php  the_date();  ?></span>
             </div>
         </div>
     </div>

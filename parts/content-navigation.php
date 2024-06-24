@@ -1,6 +1,7 @@
 
 <?php
 /** Get parent category */
+$current_post_id = get_the_ID();
 $categories = get_the_category();
 
 if ($categories) {
@@ -24,26 +25,25 @@ if ($categories) {
             'category__in' => $child_category_ids,
             'posts_per_page' => -1, // Change this to limit the number of posts
         );
-    } 
+    }
     $query = new WP_Query($args);
-    $nav_list = "<ul class='table table-column grid grid-cols-5  '>";
+    $nav_list = '<ul id="verse-navigation"   class=" shadow-2xl  grid grid-cols-5 gap-2 w-3/4 h-1/3 items-center text-center h-auto max-h-[600px] overflow-auto  ">';
     if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post();
-         $perma_link =    get_permalink();
-         $title = get_the_title();
-         $title = explode("-",$title)[1];
-        $nav_list .= '<li>
-                        <a href='.$perma_link.'>
-                            '.$title.'
+            $perma_link =    get_permalink();
+            $title = get_the_title();
+            $title = explode("-", $title)[1];
+            $is_active = $current_post_id == get_the_ID(); 
+            $active_class = $is_active ? 'active':"";
+            $nav_list .= '<li class="'.$active_class.'">
+                        <a href=' . $perma_link . '>
+                            ' . $title . '
                         </a>
                     </li>';
-        
-        /* get_template_part( 'parts/content', 'navigationlist' );  */
         endwhile;
         wp_reset_postdata();
     endif;
     $nav_list .= "</ul>";
-    echo "nav :: ";print_r($nav_list);die(" :: end");
-} 
-?>
-<div class="grid-cols-5 ">
+    echo $nav_list;
+}
+?> 
