@@ -20,6 +20,7 @@ module.exports = {
         'primary-color': 'var(--primary-color)',
         'secondary-color': 'var(--secondary-color)',
         'tertiary-color': 'var(--tertiary-color)',
+        'navyblue-color':'var(--navy-blue-color)'
       }
     },
   },

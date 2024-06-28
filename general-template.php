@@ -7,7 +7,7 @@ Template Name: General Template
 <!-- 
 <img src="<?php header_image(); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" alt="" /> -->
 
-        <div id="content" class="site-content">
+        <div id="content" class="site-content site-container">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
                     <div class="container">
@@ -29,6 +29,5 @@ Template Name: General Template
                     </div>
                 </main>
             </div>
-        </div>
-        <h1>Hellow</h1>    
+        </div> 
 <?php get_footer(); ?>

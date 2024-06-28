@@ -16,6 +16,18 @@ function geeta_load_scripts(){
 }
 add_action( 'wp_enqueue_scripts', 'geeta_load_scripts' );
 
+function add_custom_styles_for_general_template() {
+    if (is_page_template('general-template.php')) {
+        echo '<style>
+            h1, h2, h3, h4, h5, h6, p {
+                all: revert;
+            }
+        </style>';
+    }
+}
+add_action('wp_head', 'add_custom_styles_for_general_template');
+
+
 function geeta_config(){
 
     $textdomain = 'geeta';
