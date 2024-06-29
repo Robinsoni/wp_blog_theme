@@ -3,8 +3,7 @@
  @tailwind utilities;
 
  :root {
-     --primary-color: #4B6BFB;
-
+     --primary-color: #4B6BFB; 
      --secondary-color: #d69f02;
      --tertiary-color: #340d00;
      --light-gray-border: #80808040;
@@ -61,6 +60,7 @@
      height: 500px;
      max-height: 70vh;
      border-radius: 10px;
+     width: 100%;
  }
 
  ul#verse-navigation {
@@ -141,15 +141,16 @@
 #close.hide {
    display: none;
 }
-
+  
  @media (max-width: 599px) { 
      /* Styles */
      .site-container {
          width: 80%;
          margin: auto;
 
-     }
- 
+     } 
+     
+
      nav.main-menu {   
          ul#menu-main-menu {
              background: var(--navy-blue-color);
@@ -161,15 +162,13 @@
              flex-direction: column;
              justify-content: center;
              align-items: center;
-             z-index: 1;
+             z-index: 2;
              opacity: 0.95;
              color: white; 
              display: none;
-             li {
-                
+             li { 
                 margin: 0;
-                width: 35%;
-                
+                width: 35%; 
                 align-self: center;
                 display: flex;
                  a[aria-current="page"] {

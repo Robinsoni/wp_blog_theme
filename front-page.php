@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="overflow-hidden bg-tertiary-color text-white py-2  sticky  top-0 ">
+<div class="overflow-hidden bg-tertiary-color text-white py-2  sticky  top-0 z-[1]  ">
     <div class="ticker-animation whitespace-nowrap">
         <span class="mx-4">इस वेबसाइट का सारा कंटेंट हिंदू धार्मिक ग्रंथों से तथा महापुरुषों और संतों की वाणी से लिया गया है, जिसमें गीता प्रेस से प्रकाशित होने वाले ग्रंथों की अहम भूमिका है। इस वेबसाइट पर उपलब्ध कंटेंट का हम किसी भी तरह का आधिपत्य नहीं जताते हैं तथा इस वेबसाइट का उद्देश्य केवल जन-जन तक भगवद उपदेशों को पहुंचाना है।</span>
         <span class="mx-4">हरे राम हरे राम, राम राम हरे हरे, हरे कृष्ण हरे कृष्ण, कृष्ण कृष्ण हरे हरे</span>

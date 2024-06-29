@@ -8,7 +8,7 @@
            <!--  <?php the_archive_title('<h1 class="archive-title">', '</h1>'); ?>
             <?php the_archive_description('<div class="archive-description">', '</div>'); ?> -->
 
-            <section class="post-container site-container grid grid-cols-3 gap-3">
+            <section class="post-container site-container grid grid-cols-3 gap-3 max-sm:grid-cols-1 max-md:grid-cols-2">
                 <?php
                 $current_category = get_queried_object();
                 $child_categories = get_categories(array(
