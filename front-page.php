@@ -12,7 +12,7 @@
 </section>
 <section class="ad-section h-[160px] w-full ">
 </section>
-<section class="post-container site-container grid grid-cols-3 gap-3">
+<section class="post-container site-container grid grid-cols-3 gap-3 max-sm:grid-cols-1 max-md:grid-cols-2">
 
     <?php
     // Get top-level categories
@@ -42,6 +42,10 @@
     $query = new WP_Query($args);
     if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post();
+            get_template_part('parts/content', 'card');
+            get_template_part('parts/content', 'card');
+            get_template_part('parts/content', 'card');
+            get_template_part('parts/content', 'card');
             get_template_part('parts/content', 'card');
         endwhile;
         wp_reset_postdata();

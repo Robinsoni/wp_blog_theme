@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
     $('.excerpt-badge').click(function(e){
          
         $(this.parentElement.querySelector('.excerpt-card')).toggleClass('hidden'); 
-      /*   $(this.parentElement.querySelector('.excerpt-card')).slideToggle(500);  */
+     
         let ele = this.parentElement.querySelector('.fa-angle-double-right');
         if(ele){
             ele.classList.remove("fa-angle-double-right");
@@ -16,5 +16,23 @@ jQuery(document).ready(function($) {
         } 
         console.log(" element ", ele);
         //.classList.add("fa-angle-double-down"); 
+    });
+
+    const hamburger = $('#hamburger')[0]; 
+    const close_nav = $('#close')[0]; 
+    const nav = $('nav.main-menu ul')[0]; 
+    console.log("nav: ",nav);
+    console.log("hamberger: ",hamburger);
+    $('#hamburger').click(function(e){
+        console.log("nav: ",nav);
+        $(nav).toggleClass('show');
+        $(this).toggleClass("hide");
+        $(close_nav).toggleClass("show");
+       
+    });
+    $(close_nav).click(function(e){
+        $(hamburger).toggleClass("hide");
+        $(nav).toggleClass('show');
+        $(this).toggleClass("show");
     });
 });
