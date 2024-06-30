@@ -1,25 +1,25 @@
 <?php get_header(); ?>
 <div id="content" class="site-content">
     <div id="primary" class="content-area">
-        <main id="main" class="site-main">
+        <main id="main" class="site-main site-container">
             <div class="container">
                 <div class="error-404">
-                    <header>
-                        <h1><?php esc_html_e( 'Page not found', 'wp-devs' ); ?></h1>
-                        <p><?php esc_html_e( 'Unfortunately, the page you tried to reach does not exist on this site.', 'wp-devs' ) ?></p>
-                    </header>
+                    <div>
+                        <h1 class=" text-center text-4xl   "><?php esc_html_e('Page not found', 'geeta'); ?></h1>
+                        <p class="text-center text-2xl"><?php esc_html_e('Unfortunately, the page you tried to reach does not exist on this site.', 'geeta') ?></p>
+                        <img class="w-[60%] h-50vh mt-8 ml-auto mr-auto" src="<?php echo get_template_directory_uri()."/assets/img/404.png";?> " alt="" >
+                    </div>
 
                     <div class="error">
-                        <p><?php esc_html_e( 'How about doing a search?', 'wp-devs' ) ?></p>
-                        <?php get_search_form(); ?>
-                        <?php 
-                        the_widget( 
+                        <?php
+                        /* the_widget(
                             'WP_Widget_Recent_Posts',
                             array(
-                                'title' => esc_html__( 'Latest Posts', 'wp-devs' ),
+                                'title' => esc_html__('Latest Posts', 'geeta'),
                                 'number'    => 3
-                            ) 
-                        ); 
+                            )
+                        ); */
+                        get_sidebar();
                         ?>
                     </div>
                 </div>
