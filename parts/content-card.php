@@ -27,7 +27,7 @@
 
             <div class="author flex justify-between  items-center  text-gray-500 w-3/4  mt-4  ">
                 <div class="author-details flex items-center">
-                    <img class="mr-2 w-[40px] border  rounded-full   " src="<? echo get_template_directory_uri() . "/assets/img/author-image.png"; ?>" alt="">
+                    <img class="mr-2 w-[40px] border  rounded-full   " src="<?php echo get_template_directory_uri() . "/assets/img/author-image.png"; ?>" alt="">
                     <span class="author-name"><?php  the_author();?></span>
                 </div>
                 <span class="posted-on"> <?php  the_date();  ?></span>

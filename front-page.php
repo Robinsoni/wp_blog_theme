@@ -3,7 +3,7 @@
     <div class="ticker-animation whitespace-nowrap">
         <span class="mx-4">इस वेबसाइट का सारा कंटेंट हिंदू धार्मिक ग्रंथों से तथा महापुरुषों और संतों की वाणी से लिया गया है, जिसमें गीता प्रेस से प्रकाशित होने वाले ग्रंथों की अहम भूमिका है। इस वेबसाइट पर उपलब्ध कंटेंट का हम किसी भी तरह का आधिपत्य नहीं जताते हैं तथा इस वेबसाइट का उद्देश्य केवल जन-जन तक भगवद उपदेशों को पहुंचाना है।</span>
         <span class="mx-4">हरे राम हरे राम, राम राम हरे हरे, हरे कृष्ण हरे कृष्ण, कृष्ण कृष्ण हरे हरे</span>
-        <span class="mx-4">FYI: Related content on this site will be added time to time, so please be updated and visit the site too often.  </span>
+        <span class="mx-4">FYI: Related content on this site will be added time to time, so please be updated and visit the site too often. </span>
     </div>
 </div>
 <section class="hero-section site-container">
@@ -53,5 +53,7 @@
         echo '<p>No posts found.</p>';
     endif;
     ?>
+
 </section>
+
 <?php get_footer(); ?>
