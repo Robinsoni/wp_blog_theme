@@ -1,0 +1,25 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main  # or the branch you want to deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Sync files to Hostinger
+      run: |
+        rsync -avz --delete --exclude '.git*' ./ u919532547@157.173.216.48:home/public_html/wp-content/themes/geeta/
+      env:
+        RSYNC_RSH: 'ssh -o StrictHostKeyChecking=no -i /home/runner/.ssh/id_rsa -p 65002'
