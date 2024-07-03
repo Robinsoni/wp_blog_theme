@@ -142,8 +142,10 @@
 #close.hide {
    display: none;
 }
+ 
   
  @media (max-width: 599px) { 
+  
      /* Styles */
      .site-container {
          width: 80%;

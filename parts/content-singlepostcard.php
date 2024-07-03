@@ -2,11 +2,11 @@
 $shloka = get_post_meta(get_the_ID(), 'Verse', true);
 ?>
 
-<div class="card-container border max-h-[77vh] max-md:overflow-auto   border-l-secondary-color border-l-[30px]  w-full rounded-md  p-[15px] shadow-2xl cursor-pointer    transition-transform  ease-in-out  delay-75      " >
+<div class="card-container border  max-md:h-auto  max-md:max-h-[1000vh] max-h-[77vh] max-md:overflow-auto   border-l-secondary-color border-l-[30px] max-md:border-l-[5px]  w-full rounded-md  p-[15px] shadow-2xl cursor-pointer    transition-transform  ease-in-out  delay-75      " >
     <div class="card flex justify-between max-md:flex-col " id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         
 
-        <div class="card-details mt-4  mb-4 w-2/3 pr-20  max-h-[70vh]  overflow-auto  max-md:w-full max-md:pr-[5px] max-md:order-2 "  >
+        <div class="card-details mt-4  mb-4 w-2/3 pr-20  max-md:h-auto  max-md:max-h-[1000vh] max-h-[70vh]  overflow-auto  max-md:w-full max-md:pr-[5px] max-md:order-2 "  >
             <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">अध्याय-एक</span>
             <div class="text-xl  font-semibold mt-2 "><a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a> </div>
             <div class="text-center text-xl font-bold  "> <?php echo  $shloka; ?></div>
